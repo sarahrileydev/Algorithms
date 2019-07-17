@@ -4,7 +4,18 @@ import math
 
 def recipe_batches(recipe, ingredients):
   pass 
+  min_num = 1000000
 
+  for key in recipe:
+    if key in ingredients:
+      num_batches = ingredients[key] / recipe[key]
+      if num_batches < min_num:
+        min_num = int(num_batches)
+
+    else:
+      min_num = 0
+
+  return min_num    
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
